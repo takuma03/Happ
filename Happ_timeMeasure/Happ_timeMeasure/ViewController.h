@@ -13,6 +13,10 @@
     int minTime;
     int hourTime;
     NSTimer *tm;
+    NSString *time;
+    NSString *title;
+    NSString *categoly;
+    NSString *memo;
     
 }
 @property (weak, nonatomic) IBOutlet UILabel *timeView;
