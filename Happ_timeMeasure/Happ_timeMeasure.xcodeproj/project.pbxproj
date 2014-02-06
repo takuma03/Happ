@@ -53,6 +53,7 @@
 		F10B091D18A118E200B049EB /* Happ_timeMeasureTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Happ_timeMeasureTests-Info.plist"; sourceTree = "<group>"; };
 		F10B091F18A118E200B049EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F10B092118A118E200B049EB /* Happ_timeMeasureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Happ_timeMeasureTests.m; sourceTree = "<group>"; };
+		F174764B18A3BE0400181D82 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +102,7 @@
 		F10B08F518A118E200B049EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F174764B18A3BE0400181D82 /* CoreData.framework */,
 				F10B08F618A118E200B049EB /* Foundation.framework */,
 				F10B08F818A118E200B049EB /* CoreGraphics.framework */,
 				F10B08FA18A118E200B049EB /* UIKit.framework */,
@@ -460,6 +462,7 @@
 				F10B092718A118E200B049EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F10B092818A118E200B049EB /* Build configuration list for PBXNativeTarget "Happ_timeMeasureTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +471,7 @@
 				F10B092A18A118E200B049EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

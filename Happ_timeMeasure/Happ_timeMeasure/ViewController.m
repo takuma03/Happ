@@ -24,9 +24,6 @@
     [self.memo setDelegate:self];
     
     
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
