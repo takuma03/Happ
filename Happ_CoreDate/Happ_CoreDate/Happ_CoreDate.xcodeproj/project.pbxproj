@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F174766018A3CA8500181D82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F174765F18A3CA8500181D82 /* Foundation.framework */; };
+		F174766218A3CA8500181D82 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F174766118A3CA8500181D82 /* CoreGraphics.framework */; };
+		F174766418A3CA8500181D82 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F174766318A3CA8500181D82 /* UIKit.framework */; };
+		F174766618A3CA8500181D82 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F174766518A3CA8500181D82 /* CoreData.framework */; };
+		F174766C18A3CA8500181D82 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F174766A18A3CA8500181D82 /* InfoPlist.strings */; };
+		F174766E18A3CA8500181D82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F174766D18A3CA8500181D82 /* main.m */; };
+		F174767218A3CA8500181D82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F174767118A3CA8500181D82 /* AppDelegate.m */; };
+		F174767518A3CA8500181D82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F174767318A3CA8500181D82 /* Main.storyboard */; };
+		F174767818A3CA8500181D82 /* Happ_CoreDate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F174767618A3CA8500181D82 /* Happ_CoreDate.xcdatamodeld */; };
+		F174767B18A3CA8500181D82 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F174767A18A3CA8500181D82 /* MasterViewController.m */; };
+		F174767E18A3CA8500181D82 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F174767D18A3CA8500181D82 /* DetailViewController.m */; };
+		F174768018A3CA8500181D82 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F174767F18A3CA8500181D82 /* Images.xcassets */; };
+		F174768718A3CA8500181D82 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F174768618A3CA8500181D82 /* XCTest.framework */; };
+		F174768818A3CA8500181D82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F174765F18A3CA8500181D82 /* Foundation.framework */; };
+		F174768918A3CA8500181D82 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F174766318A3CA8500181D82 /* UIKit.framework */; };
+		F174768A18A3CA8500181D82 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F174766518A3CA8500181D82 /* CoreData.framework */; };
+		F174769218A3CA8500181D82 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F174769018A3CA8500181D82 /* InfoPlist.strings */; };
+		F174769418A3CA8500181D82 /* Happ_CoreDateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F174769318A3CA8500181D82 /* Happ_CoreDateTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F174768B18A3CA8500181D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F174765418A3CA8500181D82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F174765B18A3CA8500181D82;
+			remoteInfo = Happ_CoreDate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F174765C18A3CA8500181D82 /* Happ_CoreDate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happ_CoreDate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F174765F18A3CA8500181D82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F174766118A3CA8500181D82 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F174766318A3CA8500181D82 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F174766518A3CA8500181D82 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F174766918A3CA8500181D82 /* Happ_CoreDate-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Happ_CoreDate-Info.plist"; sourceTree = "<group>"; };
+		F174766B18A3CA8500181D82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F174766D18A3CA8500181D82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F174766F18A3CA8500181D82 /* Happ_CoreDate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Happ_CoreDate-Prefix.pch"; sourceTree = "<group>"; };
+		F174767018A3CA8500181D82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F174767118A3CA8500181D82 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F174767418A3CA8500181D82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F174767718A3CA8500181D82 /* Happ_CoreDate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Happ_CoreDate.xcdatamodel; sourceTree = "<group>"; };
+		F174767918A3CA8500181D82 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		F174767A18A3CA8500181D82 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		F174767C18A3CA8500181D82 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		F174767D18A3CA8500181D82 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		F174767F18A3CA8500181D82 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F174768518A3CA8500181D82 /* Happ_CoreDateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Happ_CoreDateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F174768618A3CA8500181D82 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F174768F18A3CA8500181D82 /* Happ_CoreDateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Happ_CoreDateTests-Info.plist"; sourceTree = "<group>"; };
+		F174769118A3CA8500181D82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F174769318A3CA8500181D82 /* Happ_CoreDateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Happ_CoreDateTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F174765918A3CA8500181D82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F174766218A3CA8500181D82 /* CoreGraphics.framework in Frameworks */,
+				F174766618A3CA8500181D82 /* CoreData.framework in Frameworks */,
+				F174766418A3CA8500181D82 /* UIKit.framework in Frameworks */,
+				F174766018A3CA8500181D82 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F174768218A3CA8500181D82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F174768718A3CA8500181D82 /* XCTest.framework in Frameworks */,
+				F174768A18A3CA8500181D82 /* CoreData.framework in Frameworks */,
+				F174768918A3CA8500181D82 /* UIKit.framework in Frameworks */,
+				F174768818A3CA8500181D82 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F174765318A3CA8500181D82 = {
+			isa = PBXGroup;
+			children = (
+				F174766718A3CA8500181D82 /* Happ_CoreDate */,
+				F174768D18A3CA8500181D82 /* Happ_CoreDateTests */,
+				F174765E18A3CA8500181D82 /* Frameworks */,
+				F174765D18A3CA8500181D82 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F174765D18A3CA8500181D82 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F174765C18A3CA8500181D82 /* Happ_CoreDate.app */,
+				F174768518A3CA8500181D82 /* Happ_CoreDateTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F174765E18A3CA8500181D82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F174765F18A3CA8500181D82 /* Foundation.framework */,
+				F174766118A3CA8500181D82 /* CoreGraphics.framework */,
+				F174766318A3CA8500181D82 /* UIKit.framework */,
+				F174766518A3CA8500181D82 /* CoreData.framework */,
+				F174768618A3CA8500181D82 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F174766718A3CA8500181D82 /* Happ_CoreDate */ = {
+			isa = PBXGroup;
+			children = (
+				F174767018A3CA8500181D82 /* AppDelegate.h */,
+				F174767118A3CA8500181D82 /* AppDelegate.m */,
+				F174767318A3CA8500181D82 /* Main.storyboard */,
+				F174767918A3CA8500181D82 /* MasterViewController.h */,
+				F174767A18A3CA8500181D82 /* MasterViewController.m */,
+				F174767C18A3CA8500181D82 /* DetailViewController.h */,
+				F174767D18A3CA8500181D82 /* DetailViewController.m */,
+				F174767F18A3CA8500181D82 /* Images.xcassets */,
+				F174767618A3CA8500181D82 /* Happ_CoreDate.xcdatamodeld */,
+				F174766818A3CA8500181D82 /* Supporting Files */,
+			);
+			path = Happ_CoreDate;
+			sourceTree = "<group>";
+		};
+		F174766818A3CA8500181D82 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F174766918A3CA8500181D82 /* Happ_CoreDate-Info.plist */,
+				F174766A18A3CA8500181D82 /* InfoPlist.strings */,
+				F174766D18A3CA8500181D82 /* main.m */,
+				F174766F18A3CA8500181D82 /* Happ_CoreDate-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F174768D18A3CA8500181D82 /* Happ_CoreDateTests */ = {
+			isa = PBXGroup;
+			children = (
+				F174769318A3CA8500181D82 /* Happ_CoreDateTests.m */,
+				F174768E18A3CA8500181D82 /* Supporting Files */,
+			);
+			path = Happ_CoreDateTests;
+			sourceTree = "<group>";
+		};
+		F174768E18A3CA8500181D82 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F174768F18A3CA8500181D82 /* Happ_CoreDateTests-Info.plist */,
+				F174769018A3CA8500181D82 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F174765B18A3CA8500181D82 /* Happ_CoreDate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F174769718A3CA8500181D82 /* Build configuration list for PBXNativeTarget "Happ_CoreDate" */;
+			buildPhases = (
+				F174765818A3CA8500181D82 /* Sources */,
+				F174765918A3CA8500181D82 /* Frameworks */,
+				F174765A18A3CA8500181D82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Happ_CoreDate;
+			productName = Happ_CoreDate;
+			productReference = F174765C18A3CA8500181D82 /* Happ_CoreDate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F174768418A3CA8500181D82 /* Happ_CoreDateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F174769A18A3CA8500181D82 /* Build configuration list for PBXNativeTarget "Happ_CoreDateTests" */;
+			buildPhases = (
+				F174768118A3CA8500181D82 /* Sources */,
+				F174768218A3CA8500181D82 /* Frameworks */,
+				F174768318A3CA8500181D82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F174768C18A3CA8500181D82 /* PBXTargetDependency */,
+			);
+			name = Happ_CoreDateTests;
+			productName = Happ_CoreDateTests;
+			productReference = F174768518A3CA8500181D82 /* Happ_CoreDateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F174765418A3CA8500181D82 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "卓馬";
+				TargetAttributes = {
+					F174768418A3CA8500181D82 = {
+						TestTargetID = F174765B18A3CA8500181D82;
+					};
+				};
+			};
+			buildConfigurationList = F174765718A3CA8500181D82 /* Build configuration list for PBXProject "Happ_CoreDate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F174765318A3CA8500181D82;
+			productRefGroup = F174765D18A3CA8500181D82 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F174765B18A3CA8500181D82 /* Happ_CoreDate */,
+				F174768418A3CA8500181D82 /* Happ_CoreDateTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F174765A18A3CA8500181D82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F174768018A3CA8500181D82 /* Images.xcassets in Resources */,
+				F174766C18A3CA8500181D82 /* InfoPlist.strings in Resources */,
+				F174767518A3CA8500181D82 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F174768318A3CA8500181D82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F174769218A3CA8500181D82 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F174765818A3CA8500181D82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F174767E18A3CA8500181D82 /* DetailViewController.m in Sources */,
+				F174767B18A3CA8500181D82 /* MasterViewController.m in Sources */,
+				F174767218A3CA8500181D82 /* AppDelegate.m in Sources */,
+				F174766E18A3CA8500181D82 /* main.m in Sources */,
+				F174767818A3CA8500181D82 /* Happ_CoreDate.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F174768118A3CA8500181D82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F174769418A3CA8500181D82 /* Happ_CoreDateTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F174768C18A3CA8500181D82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F174765B18A3CA8500181D82 /* Happ_CoreDate */;
+			targetProxy = F174768B18A3CA8500181D82 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F174766A18A3CA8500181D82 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F174766B18A3CA8500181D82 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F174767318A3CA8500181D82 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F174767418A3CA8500181D82 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F174769018A3CA8500181D82 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F174769118A3CA8500181D82 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F174769518A3CA8500181D82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F174769618A3CA8500181D82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F174769818A3CA8500181D82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Happ_CoreDate/Happ_CoreDate-Prefix.pch";
+				INFOPLIST_FILE = "Happ_CoreDate/Happ_CoreDate-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F174769918A3CA8500181D82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Happ_CoreDate/Happ_CoreDate-Prefix.pch";
+				INFOPLIST_FILE = "Happ_CoreDate/Happ_CoreDate-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F174769B18A3CA8500181D82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Happ_CoreDate.app/Happ_CoreDate";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Happ_CoreDate/Happ_CoreDate-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Happ_CoreDateTests/Happ_CoreDateTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F174769C18A3CA8500181D82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Happ_CoreDate.app/Happ_CoreDate";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Happ_CoreDate/Happ_CoreDate-Prefix.pch";
+				INFOPLIST_FILE = "Happ_CoreDateTests/Happ_CoreDateTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F174765718A3CA8500181D82 /* Build configuration list for PBXProject "Happ_CoreDate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F174769518A3CA8500181D82 /* Debug */,
+				F174769618A3CA8500181D82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F174769718A3CA8500181D82 /* Build configuration list for PBXNativeTarget "Happ_CoreDate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F174769818A3CA8500181D82 /* Debug */,
+				F174769918A3CA8500181D82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F174769A18A3CA8500181D82 /* Build configuration list for PBXNativeTarget "Happ_CoreDateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F174769B18A3CA8500181D82 /* Debug */,
+				F174769C18A3CA8500181D82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F174767618A3CA8500181D82 /* Happ_CoreDate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F174767718A3CA8500181D82 /* Happ_CoreDate.xcdatamodel */,
+			);
+			currentVersion = F174767718A3CA8500181D82 /* Happ_CoreDate.xcdatamodel */;
+			path = Happ_CoreDate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F174765418A3CA8500181D82 /* Project object */;
+}
