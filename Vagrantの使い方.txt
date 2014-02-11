@@ -1,0 +1,95 @@
+Vagrantの操作
+■仮想マシンを作成・初期化
+①適当な場所に仮想マシン用ディレクトリを作成する。
+#mkdir <マシン名>
+#cd <マシン名>/
+
+②初期化コマンド(centos64)を実行する。
+#vagrant init centos64(ボックス名)
+　
+■仮想マシンを起動
+#vagrant up
+
+■仮想マシンの状態確認
+#vagrant status
+
+■仮想マシンの削除
+#vagrant destroy
+
+■仮想マシンの接続方法
+#vagrant ssh
+
+■仮想マシンのネットワーク設定(Vagrantfileの編集)
+①ネットワークの設定を行う。
+#vi Vagrantfile
+→config.vm.network :private_networkの行のコメントを外す。
+
+②仮想マシンの再起動
+#vagrant reload
+
+■仮想マシンの共有フォルダの使用方法
+ホスト上のVagrantfileがあるディレクトリ
+　　　　↑
+　つながっている
+　　　　↓
+仮想マシン上の/vagrantディレクトリ
+
+■Provisioning(vagrant upしたときに自動で一連の処理をしてくれる)の使い方
+①Vagrantfileを編集する。
+#vi Vagrantfile
+
+②適当な行に  
+　config.vm.provision :shell, :path => "provison.sh"
+　
+③シェルを作成する。
+#vi provision.sh
+例
+sudo yum -y install httpd
+sudo service httpd start
+sudo chkconfig httpd on
+
+④仮想マシンを立ち上げる。
+#vagrant up
+※既に仮想マシンが立ち上がっている場合は以下のコマンド
+#vagrant provision
+
+■オリジナルのBoxを作成する方法
+①rollbackできるように、sandboxモードをonにする。
+#vagrant sandbox on
+#vagrant ssh
+
+②VMに入り、MACアドレスとのマッピングを無効にする。
+#sudo ln -s -f /dev/null /etc/udev/rules.d/70-persistent-net.rules
+#exit
+
+③Vagrantfileがあるディレクトリで以下のコマンドを実行する。
+#vagrant package
+
+④できあがったパッケージファイルをシステムに追加する。
+#vagrant box add <Box名> package.box
+
+⑤VMをrollbackする。
+#vagrant sandbox rollback
+
+⑥ボックスの確認
+ls ~/.vagrant.d/boxes/
+
+ 
+ ■Webサーバーのインストール
+ sudo yum install -y httpd
+ 
+ ※起動したら自動でhttpdを起動するようにする
+ #sudo chkconfig httpd on
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
