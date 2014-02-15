@@ -6,6 +6,9 @@ Vagrantの操作
 
 ②初期化コマンド(centos64)を実行する。
 #vagrant init centos64(ボックス名)
+
+■仮想マシンにホスト名設定＆公開鍵設定
+vagrant ssh-config --host <ホスト名> >> ~/.ssh/config
 　
 ■仮想マシンを起動
 #vagrant up
