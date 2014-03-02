@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8DF3C1718C3280E0001E165 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DF3C1618C3280E0001E165 /* libsqlite3.0.dylib */; };
 		F10B08F718A118E200B049EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10B08F618A118E200B049EB /* Foundation.framework */; };
 		F10B08F918A118E200B049EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10B08F818A118E200B049EB /* CoreGraphics.framework */; };
 		F10B08FB18A118E200B049EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10B08FA18A118E200B049EB /* UIKit.framework */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B8DF3C1618C3280E0001E165 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		F10B08F318A118E200B049EB /* Happ_timeMeasure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happ_timeMeasure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10B08F618A118E200B049EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F10B08F818A118E200B049EB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8DF3C1718C3280E0001E165 /* libsqlite3.0.dylib in Frameworks */,
 				F10B08F918A118E200B049EB /* CoreGraphics.framework in Frameworks */,
 				F10B08FB18A118E200B049EB /* UIKit.framework in Frameworks */,
 				F10B08F718A118E200B049EB /* Foundation.framework in Frameworks */,
@@ -102,6 +105,7 @@
 		F10B08F518A118E200B049EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B8DF3C1618C3280E0001E165 /* libsqlite3.0.dylib */,
 				F174764B18A3BE0400181D82 /* CoreData.framework */,
 				F10B08F618A118E200B049EB /* Foundation.framework */,
 				F10B08F818A118E200B049EB /* CoreGraphics.framework */,

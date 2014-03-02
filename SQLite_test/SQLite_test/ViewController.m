@@ -1,13 +1,14 @@
 //
 //  ViewController.m
-//  Happ_timeMeasure
+//  SQLite_test
 //
-//  Created by takuma on 2014/02/04.
-//  Copyright (c) 2014年 卓馬. All rights reserved.
+//  Created by tkm03 on 2014/03/01.
+//  Copyright (c) 2014年 tkm03. All rights reserved.
 //
 
 #import "ViewController.h"
 #import "sqlite3.h"
+
 
 @interface ViewController ()
 
@@ -19,67 +20,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.stopView.alpha = 0;
-    [self.kenmei setDelegate:self];
-    [self.categoly setDelegate:self];
-    [self.memo setDelegate:self];
-    
-    
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)timeStart:(id)sender {
-    tm = [NSTimer scheduledTimerWithTimeInterval:1.00 target:self selector:@selector(timer) userInfo:nil repeats:YES];
-    //スタートボタンを非表示
-    title = self.kenmei.text;
-    categoly = self.categoly.text;
-    memo = self.memo.text;
-    self.startView.alpha = 0;
-    //ストップボタンを表示
-    self.stopView.alpha =1;
-
-
-}
-
-
-- (void)timer{
-    secTime++;
-    if(secTime == 60){
-        minTime++;
-        secTime = 0;
-        if (minTime == 60) {
-            hourTime++;
-            minTime = 0;
-        }
-    }
-    self.timeView.text = [NSString stringWithFormat:@"%02d:%02d:%02d",hourTime,minTime,secTime];
-    time = self.timeView.text;
-}
-
-- (IBAction)timeStop:(id)sender {
-    
-    self.startView.alpha = 1;
-    self.stopView.alpha =0;
-    [tm invalidate];
-    //テスト用
-    NSLog(@"%@",title);
-    NSLog(@"%@",categoly);
-    NSLog(@"%@",memo);
-    NSLog(@"string:%@",time);
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)theTextField{
-    [theTextField resignFirstResponder];
-    return YES;
-}
-
-- (IBAction)dataPreserve:(id)sender {
-    NSString *dataFileName = @"Happ.sqlite3";
+    NSString *dataFileName = @"unkolist.sqlite3";
     NSString *dataFileFullPath;
     
     // 1.【物理ファイルを準備します】
@@ -121,29 +62,40 @@
     // 4.【sql文を実行していく】
     
     // CREATE IF NOT EXISTS
-    query = @"CREATE TABLE IF NOT EXISTS task(task_id integer primary key autoincrement, category text, task_name text, memo text, start_time text, stop_time text, update_time timestamp)";
+    query = @"CREATE TABLE IF NOT EXISTS unkos (name TEXT)";
     sqlite3_prepare_v2(sqlax, [query UTF8String], -1, &statement, nil);
     sqlite3_step(statement);
     sqlite3_finalize(statement);
     
     
     // INSERT
-    //NSString *name = [NSString stringWithFormat:@"%@%d",@"otiai",arc4random() % 99];
-    
-    NSString *sql_category = [NSString stringWithFormat:@"%@",categoly];
-    NSString *sql_task_name = [NSString stringWithFormat:@"%@",title];
-    NSString *sql_memo = [NSString stringWithFormat:@"%@",memo];
-    NSString *sql_start_time = [NSString stringWithFormat:@"%@",start_time];
-    NSString *sql_stop_time = [NSString stringWithFormat:@"%@",stop_time];
-    
-
+    NSString *name = [NSString stringWithFormat:@"%@%d",@"otiai",arc4random() % 99];
     query = [NSString stringWithFormat:@"INSERT INTO unkos VALUES(\"%@\")", name];
     sqlite3_prepare_v2(sqlax, [query UTF8String], -1, &statement, nil);
     sqlite3_step(statement);
     sqlite3_finalize(statement);
     
+    // SELECT
+    query = @"SELECT name FROM unkos";
+    sqlite3_prepare_v2(sqlax, [query UTF8String], -1, &statement, nil);
+    while (sqlite3_step(statement) == SQLITE_ROW) {
+        char *ownerNameChars = (char *) sqlite3_column_text(statement,0);
+        NSLog(@"Found : %s", ownerNameChars);
+    }
+    sqlite3_finalize(statement);
     
+    // 5.【sqlite閉じる】
+    sqlite3_close(sqlax);
+    
+    // }}} ここまで書いた
     
     
 }
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 @end
