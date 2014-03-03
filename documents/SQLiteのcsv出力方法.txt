@@ -1,0 +1,7 @@
+ ■csv出力方法
+ >.mode csv 
+ >.output test.csv
+ >select * from task;
+ 
+
+ 

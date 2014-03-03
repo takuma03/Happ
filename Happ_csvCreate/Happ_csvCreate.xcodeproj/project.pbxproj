@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F125500318C4CBBD0009904E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F125500218C4CBBD0009904E /* Foundation.framework */; };
+		F125500518C4CBBD0009904E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F125500418C4CBBD0009904E /* CoreGraphics.framework */; };
+		F125500718C4CBBD0009904E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F125500618C4CBBD0009904E /* UIKit.framework */; };
+		F125500D18C4CBBD0009904E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F125500B18C4CBBD0009904E /* InfoPlist.strings */; };
+		F125500F18C4CBBD0009904E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F125500E18C4CBBD0009904E /* main.m */; };
+		F125501318C4CBBD0009904E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F125501218C4CBBD0009904E /* AppDelegate.m */; };
+		F125501618C4CBBD0009904E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F125501418C4CBBD0009904E /* Main.storyboard */; };
+		F125501918C4CBBD0009904E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F125501818C4CBBD0009904E /* ViewController.m */; };
+		F125501B18C4CBBD0009904E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F125501A18C4CBBD0009904E /* Images.xcassets */; };
+		F125502218C4CBBD0009904E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F125502118C4CBBD0009904E /* XCTest.framework */; };
+		F125502318C4CBBD0009904E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F125500218C4CBBD0009904E /* Foundation.framework */; };
+		F125502418C4CBBD0009904E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F125500618C4CBBD0009904E /* UIKit.framework */; };
+		F125502C18C4CBBD0009904E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F125502A18C4CBBD0009904E /* InfoPlist.strings */; };
+		F125502E18C4CBBD0009904E /* Happ_csvCreateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F125502D18C4CBBD0009904E /* Happ_csvCreateTests.m */; };
+		F125503818C4CBD40009904E /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F125503718C4CBD40009904E /* libsqlite3.0.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F125502518C4CBBD0009904E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1254FF718C4CBBC0009904E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1254FFE18C4CBBD0009904E;
+			remoteInfo = Happ_csvCreate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F1254FFF18C4CBBD0009904E /* Happ_csvCreate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happ_csvCreate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F125500218C4CBBD0009904E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F125500418C4CBBD0009904E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F125500618C4CBBD0009904E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F125500A18C4CBBD0009904E /* Happ_csvCreate-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Happ_csvCreate-Info.plist"; sourceTree = "<group>"; };
+		F125500C18C4CBBD0009904E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F125500E18C4CBBD0009904E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F125501018C4CBBD0009904E /* Happ_csvCreate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Happ_csvCreate-Prefix.pch"; sourceTree = "<group>"; };
+		F125501118C4CBBD0009904E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F125501218C4CBBD0009904E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F125501518C4CBBD0009904E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F125501718C4CBBD0009904E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F125501818C4CBBD0009904E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F125501A18C4CBBD0009904E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F125502018C4CBBD0009904E /* Happ_csvCreateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Happ_csvCreateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F125502118C4CBBD0009904E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F125502918C4CBBD0009904E /* Happ_csvCreateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Happ_csvCreateTests-Info.plist"; sourceTree = "<group>"; };
+		F125502B18C4CBBD0009904E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F125502D18C4CBBD0009904E /* Happ_csvCreateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Happ_csvCreateTests.m; sourceTree = "<group>"; };
+		F125503718C4CBD40009904E /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F1254FFC18C4CBBD0009904E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F125503818C4CBD40009904E /* libsqlite3.0.dylib in Frameworks */,
+				F125500518C4CBBD0009904E /* CoreGraphics.framework in Frameworks */,
+				F125500718C4CBBD0009904E /* UIKit.framework in Frameworks */,
+				F125500318C4CBBD0009904E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F125501D18C4CBBD0009904E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F125502218C4CBBD0009904E /* XCTest.framework in Frameworks */,
+				F125502418C4CBBD0009904E /* UIKit.framework in Frameworks */,
+				F125502318C4CBBD0009904E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F1254FF618C4CBBC0009904E = {
+			isa = PBXGroup;
+			children = (
+				F125500818C4CBBD0009904E /* Happ_csvCreate */,
+				F125502718C4CBBD0009904E /* Happ_csvCreateTests */,
+				F125500118C4CBBD0009904E /* Frameworks */,
+				F125500018C4CBBD0009904E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F125500018C4CBBD0009904E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1254FFF18C4CBBD0009904E /* Happ_csvCreate.app */,
+				F125502018C4CBBD0009904E /* Happ_csvCreateTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F125500118C4CBBD0009904E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F125503718C4CBD40009904E /* libsqlite3.0.dylib */,
+				F125500218C4CBBD0009904E /* Foundation.framework */,
+				F125500418C4CBBD0009904E /* CoreGraphics.framework */,
+				F125500618C4CBBD0009904E /* UIKit.framework */,
+				F125502118C4CBBD0009904E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F125500818C4CBBD0009904E /* Happ_csvCreate */ = {
+			isa = PBXGroup;
+			children = (
+				F125501118C4CBBD0009904E /* AppDelegate.h */,
+				F125501218C4CBBD0009904E /* AppDelegate.m */,
+				F125501418C4CBBD0009904E /* Main.storyboard */,
+				F125501718C4CBBD0009904E /* ViewController.h */,
+				F125501818C4CBBD0009904E /* ViewController.m */,
+				F125501A18C4CBBD0009904E /* Images.xcassets */,
+				F125500918C4CBBD0009904E /* Supporting Files */,
+			);
+			path = Happ_csvCreate;
+			sourceTree = "<group>";
+		};
+		F125500918C4CBBD0009904E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F125500A18C4CBBD0009904E /* Happ_csvCreate-Info.plist */,
+				F125500B18C4CBBD0009904E /* InfoPlist.strings */,
+				F125500E18C4CBBD0009904E /* main.m */,
+				F125501018C4CBBD0009904E /* Happ_csvCreate-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F125502718C4CBBD0009904E /* Happ_csvCreateTests */ = {
+			isa = PBXGroup;
+			children = (
+				F125502D18C4CBBD0009904E /* Happ_csvCreateTests.m */,
+				F125502818C4CBBD0009904E /* Supporting Files */,
+			);
+			path = Happ_csvCreateTests;
+			sourceTree = "<group>";
+		};
+		F125502818C4CBBD0009904E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F125502918C4CBBD0009904E /* Happ_csvCreateTests-Info.plist */,
+				F125502A18C4CBBD0009904E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F1254FFE18C4CBBD0009904E /* Happ_csvCreate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F125503118C4CBBD0009904E /* Build configuration list for PBXNativeTarget "Happ_csvCreate" */;
+			buildPhases = (
+				F1254FFB18C4CBBD0009904E /* Sources */,
+				F1254FFC18C4CBBD0009904E /* Frameworks */,
+				F1254FFD18C4CBBD0009904E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Happ_csvCreate;
+			productName = Happ_csvCreate;
+			productReference = F1254FFF18C4CBBD0009904E /* Happ_csvCreate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F125501F18C4CBBD0009904E /* Happ_csvCreateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F125503418C4CBBD0009904E /* Build configuration list for PBXNativeTarget "Happ_csvCreateTests" */;
+			buildPhases = (
+				F125501C18C4CBBD0009904E /* Sources */,
+				F125501D18C4CBBD0009904E /* Frameworks */,
+				F125501E18C4CBBD0009904E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F125502618C4CBBD0009904E /* PBXTargetDependency */,
+			);
+			name = Happ_csvCreateTests;
+			productName = Happ_csvCreateTests;
+			productReference = F125502018C4CBBD0009904E /* Happ_csvCreateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1254FF718C4CBBC0009904E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "卓馬";
+				TargetAttributes = {
+					F125501F18C4CBBD0009904E = {
+						TestTargetID = F1254FFE18C4CBBD0009904E;
+					};
+				};
+			};
+			buildConfigurationList = F1254FFA18C4CBBC0009904E /* Build configuration list for PBXProject "Happ_csvCreate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F1254FF618C4CBBC0009904E;
+			productRefGroup = F125500018C4CBBD0009904E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F1254FFE18C4CBBD0009904E /* Happ_csvCreate */,
+				F125501F18C4CBBD0009904E /* Happ_csvCreateTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F1254FFD18C4CBBD0009904E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F125501B18C4CBBD0009904E /* Images.xcassets in Resources */,
+				F125500D18C4CBBD0009904E /* InfoPlist.strings in Resources */,
+				F125501618C4CBBD0009904E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F125501E18C4CBBD0009904E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F125502C18C4CBBD0009904E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F1254FFB18C4CBBD0009904E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F125501918C4CBBD0009904E /* ViewController.m in Sources */,
+				F125501318C4CBBD0009904E /* AppDelegate.m in Sources */,
+				F125500F18C4CBBD0009904E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F125501C18C4CBBD0009904E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F125502E18C4CBBD0009904E /* Happ_csvCreateTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F125502618C4CBBD0009904E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1254FFE18C4CBBD0009904E /* Happ_csvCreate */;
+			targetProxy = F125502518C4CBBD0009904E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F125500B18C4CBBD0009904E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F125500C18C4CBBD0009904E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F125501418C4CBBD0009904E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F125501518C4CBBD0009904E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F125502A18C4CBBD0009904E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F125502B18C4CBBD0009904E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F125502F18C4CBBD0009904E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F125503018C4CBBD0009904E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F125503218C4CBBD0009904E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Happ_csvCreate/Happ_csvCreate-Prefix.pch";
+				INFOPLIST_FILE = "Happ_csvCreate/Happ_csvCreate-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F125503318C4CBBD0009904E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Happ_csvCreate/Happ_csvCreate-Prefix.pch";
+				INFOPLIST_FILE = "Happ_csvCreate/Happ_csvCreate-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F125503518C4CBBD0009904E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Happ_csvCreate.app/Happ_csvCreate";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Happ_csvCreate/Happ_csvCreate-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Happ_csvCreateTests/Happ_csvCreateTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F125503618C4CBBD0009904E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Happ_csvCreate.app/Happ_csvCreate";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Happ_csvCreate/Happ_csvCreate-Prefix.pch";
+				INFOPLIST_FILE = "Happ_csvCreateTests/Happ_csvCreateTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F1254FFA18C4CBBC0009904E /* Build configuration list for PBXProject "Happ_csvCreate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F125502F18C4CBBD0009904E /* Debug */,
+				F125503018C4CBBD0009904E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F125503118C4CBBD0009904E /* Build configuration list for PBXNativeTarget "Happ_csvCreate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F125503218C4CBBD0009904E /* Debug */,
+				F125503318C4CBBD0009904E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F125503418C4CBBD0009904E /* Build configuration list for PBXNativeTarget "Happ_csvCreateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F125503518C4CBBD0009904E /* Debug */,
+				F125503618C4CBBD0009904E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1254FF718C4CBBC0009904E /* Project object */;
+}
