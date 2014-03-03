@@ -42,7 +42,8 @@
     self.startView.alpha = 0;
     //ストップボタンを表示
     self.stopView.alpha =1;
-
+    
+    start_time = [self timeGet];
 
 }
 
@@ -71,12 +72,36 @@
     NSLog(@"%@",categoly);
     NSLog(@"%@",memo);
     NSLog(@"string:%@",time);
+    
+    stop_time = [self timeGet];
+    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField{
     [theTextField resignFirstResponder];
     return YES;
 }
+
+- (NSString *)timeGet{
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"]]; // Localeの指定
+    [df setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
+    
+    NSDate *now = [NSDate date];
+    NSString *strNow = [df stringFromDate:now];
+    
+    // ログ出力
+    //NSLog(@"現在日時：%@", strNow);
+    
+    return strNow;
+}
+
+
+
+
+
+
+
 
 - (IBAction)dataPreserve:(id)sender {
     NSString *dataFileName = @"Happ.sqlite3";
@@ -93,6 +118,7 @@
     // 物理ファイルって既にありますか？
     //stringByAppendingPathComponent データの末尾に追加する
     dataFileFullPath = [dir stringByAppendingPathComponent:dataFileName];
+    NSLog(@"DBfile is %@",dataFileFullPath);
     BOOL fileExists = [myFM fileExistsAtPath:dataFileFullPath];
     // 無い場合はつくる
     if (! fileExists) {
@@ -135,14 +161,15 @@
     NSString *sql_memo = [NSString stringWithFormat:@"%@",memo];
     NSString *sql_start_time = [NSString stringWithFormat:@"%@",start_time];
     NSString *sql_stop_time = [NSString stringWithFormat:@"%@",stop_time];
+    NSString *sql_update_time = [self timeGet];
     
+    
+    NSLog(@"sql_update_time is %@",sql_update_time);
 
-    query = [NSString stringWithFormat:@"INSERT INTO unkos VALUES(\"%@\")", name];
+    query = [NSString stringWithFormat:@"INSERT INTO task VALUES(NULL,\"%@\",\"%@\",\"%@\",\"%@\",\"%@\",\"%@\")", sql_category,sql_task_name,sql_memo,sql_start_time,sql_stop_time,sql_update_time];
     sqlite3_prepare_v2(sqlax, [query UTF8String], -1, &statement, nil);
     sqlite3_step(statement);
     sqlite3_finalize(statement);
-    
-    
     
     
 }
