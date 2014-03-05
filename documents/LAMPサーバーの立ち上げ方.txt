@@ -1,0 +1,15 @@
+LAMPサーバーの立ち上げ方
+①適当な場所にディレクトリを作成する。
+#mkdir LAMP
+#cd LAMP
+
+②初期化コマンドを実行する。
+#vagrant init LAMP_box
+
+③仮想マシンのネットワーク設定を行う。
+#vi Vagrantfile
+→config.vm.network :private_networkの行のコメントを外す。
+
+④仮想マシンを起動する。
+#vagrant up
+
