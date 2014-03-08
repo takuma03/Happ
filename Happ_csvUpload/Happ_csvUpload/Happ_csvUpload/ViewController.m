@@ -18,8 +18,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"/Users/saitotakuma/Library/Application Support/iPhone Simulator/7.0.3/Applications/FE4C7B3C-5DEB-4D62-953A-DD0FF3A27C8F/Document/test" ofType:@"csv"];
+    //NSString *samplePath = [NSString stringWithFormat:@"%s","/Users/saitotakuma/Library/Application Support/iPhone Simulator/7.0.3/Applications/EC5CCFE8-DE17-4C7B-9943-77BF6F3BB293/Happ_csvUpload.app/test.csv"];
+    
+    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"csv"];
+    NSLog(@"%@" ,samplePath);
 	NSData *sampleData = [NSData dataWithContentsOfFile:samplePath];
+    //NSLog(@"%@",sampleData);
     
 	//送信先URL
 	NSURL *url = [NSURL URLWithString:@"http://192.168.33.10/"];
@@ -33,14 +37,17 @@
 	CFRelease(uuid);
 	NSString *boundary = [NSString stringWithFormat:@"0xKhTmLbOuNdArY-%@",uuidString];
     
+    NSLog(@"%@",boundary);
+    
 	//アップロードする際のパラメーター名
 	NSString *parameter = @"movie";
     
 	//アップロードするファイルの名前
 	NSString *fileName = [[samplePath componentsSeparatedByString:@"/"] lastObject];
+    //NSLog(@"%@",fileName);
     
 	//アップロードするファイルの種類
-	NSString *contentType = @"csv";
+	NSString *contentType = @"text/csv";
     
 	NSMutableData *postBody = [NSMutableData data];
     
@@ -53,8 +60,11 @@
 	
 	//リクエストヘッダー
 	NSString *header = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+    NSLog(@"%@",header);
+    
     
 	[request addValue:header forHTTPHeaderField:@"Content-Type"];
+    
 	[request setHTTPBody:postBody];
 	
 	[NSURLConnection connectionWithRequest:request delegate:self];
