@@ -20,6 +20,8 @@
     NSString *start_time;
     NSString *stop_time;
     NSString *dataFileFullPath;
+    NSString *dataFileName;
+    NSString *csvFileFullPath;
 }
 @property (weak, nonatomic) IBOutlet UILabel *timeView;
 - (IBAction)timeStart:(id)sender;

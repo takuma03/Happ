@@ -68,10 +68,10 @@
     self.stopView.alpha =0;
     [tm invalidate];
     //テスト用
-    NSLog(@"%@",title);
-    NSLog(@"%@",categoly);
-    NSLog(@"%@",memo);
-    NSLog(@"string:%@",time);
+    //NSLog(@"%@",title);
+    //NSLog(@"%@",categoly);
+    //NSLog(@"%@",memo);
+    //NSLog(@"string:%@",time);
     
     stop_time = [self timeGet];
     
@@ -91,7 +91,7 @@
     NSString *strNow = [df stringFromDate:now];
     
     // ログ出力
-    //NSLog(@"現在日時：%@", strNow);
+    ////NSLog(@"現在日時：%@", strNow);
     
     return strNow;
 }
@@ -104,7 +104,7 @@
 
 
 - (IBAction)dataPreserve:(id)sender {
-    NSString *dataFileName = @"Happ.sqlite3";
+    dataFileName = @"Happ.sqlite3";
     // 1.【物理ファイルを準備します】
     // 使用可能なファイルパスを全て取得する
     NSArray *availablePats = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -115,14 +115,14 @@
     // 物理ファイルって既にありますか？
     //stringByAppendingPathComponent データの末尾に追加する
     dataFileFullPath = [dir stringByAppendingPathComponent:dataFileName];
-    NSLog(@"DBfile is %@",dataFileFullPath);
+    //NSLog(@"DBfile is %@",dataFileFullPath);
     BOOL fileExists = [myFM fileExistsAtPath:dataFileFullPath];
     // 無い場合はつくる
     if (! fileExists) {
         //createFileAtPathファイルを作成する
         BOOL isSuccessfullyCreated = [myFM createFileAtPath:dataFileFullPath contents:nil attributes:nil];
         if (! isSuccessfullyCreated) {
-            NSLog(@"新規ファイル作成に失敗しました=>%@", dataFileFullPath);
+            //NSLog(@"新規ファイル作成に失敗しました=>%@", dataFileFullPath);
         }
     }
     
@@ -134,7 +134,7 @@
     // 開きます
     BOOL isSuccessfullyOpened = sqlite3_open([dataFileFullPath UTF8String], &sqlax);
     if (isSuccessfullyOpened != SQLITE_OK) {
-        NSLog(@"sqlite開けませんでした！=> %s", sqlite3_errmsg(sqlax));
+        //NSLog(@"sqlite開けませんでした！=> %s", sqlite3_errmsg(sqlax));
     }
     
     // 3.【queryとstatementを確保しとこう】
@@ -161,7 +161,7 @@
     NSString *sql_update_time = [self timeGet];
     
     
-    NSLog(@"sql_update_time is %@",sql_update_time);
+    //NSLog(@"sql_update_time is %@",sql_update_time);
 
     query = [NSString stringWithFormat:@"INSERT INTO task VALUES(NULL,\"%@\",\"%@\",\"%@\",\"%@\",\"%@\",\"%@\")", sql_category,sql_task_name,sql_memo,sql_start_time,sql_stop_time,sql_update_time];
     sqlite3_prepare_v2(sqlax, [query UTF8String], -1, &statement, nil);
@@ -172,14 +172,160 @@
 }
 
 - (IBAction)dataSync:(id)sender {
-    NSLog(@"%@",dataFileFullPath);
-    NSArray *availablePats = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    // 最初のものを使用する
-    NSString *dir = [availablePats objectAtIndex:0];
+   //csvファイルを作成
+    sqlite3 *sqlax;
     
-
+    BOOL isSuccessfullyOpened = sqlite3_open([dataFileFullPath UTF8String], &sqlax);
+    if (isSuccessfullyOpened != SQLITE_OK) {
+        //NSLog(@"sqlite開けませんでした！=> %s", sqlite3_errmsg(sqlax));
+    }
     
+    NSString *query;
+    sqlite3_stmt *statement;
+    
+    query = @"select * from task";
+    NSString *csvFileName =@"test.csv";
+    
+    sqlite3_prepare_v2(sqlax, [query UTF8String], -1, &statement, nil);
+    while (sqlite3_step(statement) == SQLITE_ROW) {
+        char *id = (char *) sqlite3_column_text(statement,0);
+        ////NSLog(@"Found : %s", id);
+        char *category = (char *) sqlite3_column_text(statement,1);
+        ////NSLog(@"Found : %s", category);
+        char *name = (char *) sqlite3_column_text(statement,2);
+        ////NSLog(@"Found : %s", name);
+        char *memo1 = (char *) sqlite3_column_text(statement,3);
+        ////NSLog(@"Found : %s", memo);
+        char *start = (char *) sqlite3_column_text(statement,4);
+        ////NSLog(@"Found : %s", start);
+        char *stop = (char *) sqlite3_column_text(statement,5);
+        ////NSLog(@"Found : %s", stop);
+        char *update = (char *) sqlite3_column_text(statement,6);
+        ////NSLog(@"Found : %s", update);
+        //NSLog(@"%s,%s,%s,%s,%s,%s,%s",id,category,name,memo1,start,stop,update);
+        
+        
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *dir = [paths objectAtIndex:0];
+        NSFileManager *myFM = [NSFileManager defaultManager];
+        // 物理ファイルって既にありますか？
+        csvFileFullPath = [dir stringByAppendingPathComponent:csvFileName];
+        BOOL fileExists = [myFM fileExistsAtPath:csvFileFullPath];
+        // 無い場合はつくる
+        if (! fileExists) {
+            BOOL isSuccessfullyCreated = [myFM createFileAtPath:csvFileFullPath contents:nil attributes:nil];
+            if (! isSuccessfullyCreated) {
+                //NSLog(@"新規ファイル作成に失敗しました=>%@", dataFileFullPath);
+            }
+        }
+        NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:csvFileFullPath];
+        if (!fileHandle) {
+            ////NSLog(@"ファイルハンドルの作成に失敗");
+            return;
+        }
+        NSString *writeLine = [NSString stringWithFormat:@"%s,%s,%s,%s,%s,%s,%s\n",id,category,name,memo1,start,stop,update];
+        NSData *data = [NSData dataWithBytes:writeLine.UTF8String length:writeLine.length];
+        [fileHandle seekToEndOfFile];
+        
+        [fileHandle writeData:data];
+        
+    }
+    sqlite3_finalize(statement);
+    NSLog(@"%@",csvFileFullPath);
+    sqlite3_close(sqlax);
+    //csv作成はここまで
+    
+    //作成したcsvファイルを送信
+    NSData *sampleData = [NSData dataWithContentsOfFile:csvFileFullPath];
+    //NSLog(@"%@",sampleData);
+    
+    //送信先URL
+	NSURL *url = [NSURL URLWithString:@"http://192.168.33.20/"];
+    
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+	[request setHTTPMethod:@"POST"];
+    
+	//multipart/form-dataのバウンダリ文字列生成
+	CFUUIDRef uuid = CFUUIDCreate(nil);
+	CFStringRef uuidString = CFUUIDCreateString(nil, uuid);
+	CFRelease(uuid);
+	NSString *boundary = [NSString stringWithFormat:@"0xKhTmLbOuNdArY-%@",uuidString];
+    
+    //NSLog(@"%@",boundary);
+    
+	//アップロードする際のパラメーター名
+	NSString *parameter = @"csv";
+    
+	//アップロードするファイルの名前
+	NSString *fileName = [[csvFileFullPath componentsSeparatedByString:@"/"] lastObject];
+    //NSLog(@"%@",fileName);
+    
+	//アップロードするファイルの種類
+	NSString *contentType = @"text/csv";
+    
+	NSMutableData *postBody = [NSMutableData data];
+    
+	//HTTPBody
+	[postBody appendData:[[NSString stringWithFormat:@"--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[postBody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",parameter,fileName] dataUsingEncoding:NSUTF8StringEncoding]];
+	[postBody appendData:[[NSString stringWithFormat:@"Content-Type: %@\r\n\r\n", contentType] dataUsingEncoding:NSUTF8StringEncoding]];
+	[postBody appendData:sampleData];
+	[postBody appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	
+	//リクエストヘッダー
+	NSString *header = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+    //NSLog(@"%@",header);
+    
+    
+	[request addValue:header forHTTPHeaderField:@"Content-Type"];
+    
+	[request setHTTPBody:postBody];
+	
+	[NSURLConnection connectionWithRequest:request delegate:self];
+    
+    //csv送信はここまで
+    
+    //作成したcsvファイルを削除する
+    NSFileManager *myFM = [NSFileManager defaultManager];
+    NSError *error;
+    
+    // ファイルを移動
+    BOOL result = [myFM removeItemAtPath:csvFileFullPath error:&error];
+    if (result) {
+        NSLog(@"ファイルを削除に成功：%@", csvFileFullPath);
+    } else {
+        NSLog(@"ファイルの削除に失敗：%@", error.description);
+    }
     
     
 }
+
+
+-(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    
+	NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+	if(httpResponse.statusCode == 200) {
+        
+		NSLog(@"Success ٩꒰๑ ´∇`๑꒱۶✧");
+        
+	} else {
+		
+		NSLog(@"Failed (´；ω；｀)");
+    }
+}
+
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    
+    NSArray *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSLog(@"%@", jsonObject);
+}
+
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    
+    NSLog(@"%@", error);
+}
+
+
+
+
 @end

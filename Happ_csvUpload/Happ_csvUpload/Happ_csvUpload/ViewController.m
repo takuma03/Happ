@@ -26,7 +26,7 @@
     //NSLog(@"%@",sampleData);
     
 	//送信先URL
-	NSURL *url = [NSURL URLWithString:@"http://192.168.33.10/"];
+	NSURL *url = [NSURL URLWithString:@"http://192.168.33.20/"];
     
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 	[request setHTTPMethod:@"POST"];
@@ -40,7 +40,7 @@
     NSLog(@"%@",boundary);
     
 	//アップロードする際のパラメーター名
-	NSString *parameter = @"movie";
+	NSString *parameter = @"csv";
     
 	//アップロードするファイルの名前
 	NSString *fileName = [[samplePath componentsSeparatedByString:@"/"] lastObject];
