@@ -105,10 +105,7 @@
 
 - (IBAction)dataPreserve:(id)sender {
     NSString *dataFileName = @"Happ.sqlite3";
-    NSString *dataFileFullPath;
-    
     // 1.【物理ファイルを準備します】
-    
     // 使用可能なファイルパスを全て取得する
     NSArray *availablePats = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     // 最初のものを使用する
@@ -170,6 +167,18 @@
     sqlite3_prepare_v2(sqlax, [query UTF8String], -1, &statement, nil);
     sqlite3_step(statement);
     sqlite3_finalize(statement);
+    
+    
+}
+
+- (IBAction)dataSync:(id)sender {
+    NSLog(@"%@",dataFileFullPath);
+    NSArray *availablePats = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    // 最初のものを使用する
+    NSString *dir = [availablePats objectAtIndex:0];
+    
+
+    
     
     
 }

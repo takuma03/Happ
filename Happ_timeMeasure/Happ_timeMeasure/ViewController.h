@@ -19,6 +19,7 @@
     NSString *memo;
     NSString *start_time;
     NSString *stop_time;
+    NSString *dataFileFullPath;
 }
 @property (weak, nonatomic) IBOutlet UILabel *timeView;
 - (IBAction)timeStart:(id)sender;
@@ -29,5 +30,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *categoly;
 @property (weak, nonatomic) IBOutlet UITextField *memo;
 - (IBAction)dataPreserve:(id)sender;
+- (IBAction)dataSync:(id)sender;
 
 @end

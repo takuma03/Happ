@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    //NSString *samplePath = [NSString stringWithFormat:@"%s","/Users/saitotakuma/Library/Application Support/iPhone Simulator/7.0.3/Applications/EC5CCFE8-DE17-4C7B-9943-77BF6F3BB293/Happ_csvUpload.app/test.csv"];
+    
     
     NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"csv"];
     NSLog(@"%@" ,samplePath);
