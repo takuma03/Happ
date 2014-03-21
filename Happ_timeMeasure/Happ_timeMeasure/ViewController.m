@@ -223,7 +223,7 @@
             ////NSLog(@"ファイルハンドルの作成に失敗");
             return;
         }
-        NSString *writeLine = [NSString stringWithFormat:@"%s,%s,%s,%s,%s,%s,%s\n",id,category,name,memo1,start,stop,update];
+        NSString *writeLine = [NSString stringWithFormat:@"%s,'%s','%s','%s','%s','%s','%s'\n",id,category,name,memo1,start,stop,update];
         NSData *data = [NSData dataWithBytes:writeLine.UTF8String length:writeLine.length];
         [fileHandle seekToEndOfFile];
         
