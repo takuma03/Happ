@@ -1,0 +1,10 @@
+CREATE TABLE task
+(
+task_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+category VARCHAR(255),
+task_name VARCHAR(255),
+memo VARCHAR(255),
+start_time VARCHAR(255),
+stop_time VARCHAR(255),
+update_time VARCHAR(255)
+);
