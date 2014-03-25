@@ -290,12 +290,14 @@
     NSError *error;
     
     // ファイルを移動
+    
     BOOL result = [myFM removeItemAtPath:csvFileFullPath error:&error];
     if (result) {
         NSLog(@"ファイルを削除に成功：%@", csvFileFullPath);
     } else {
         NSLog(@"ファイルの削除に失敗：%@", error.description);
     }
+    
     
     
 }
