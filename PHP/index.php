@@ -26,4 +26,5 @@ if(count($csv_id) > count($mysql_id)){
 }elseif(count($csv_id) < count($mysql_id)){
 	echo "CSV‚Ì”<MySQL‚ÌƒŒƒR[ƒh”‚Ìê‡";
 }
+
 ?>
