@@ -144,7 +144,7 @@
     // 4.【sql文を実行していく】
     
     // CREATE IF NOT EXISTS
-    query = @"CREATE TABLE IF NOT EXISTS task(task_id integer primary key autoincrement, category text, task_name text, memo text, start_time text, stop_time text, update_time timestamp)";
+    query = @"CREATE TABLE IF NOT EXISTS task(task_id integer primary key autoincrement, category text, task_name text, memo text, sync_flag integre, start_time text, stop_time text, update_time timestamp)";
     sqlite3_prepare_v2(sqlax, [query UTF8String], -1, &statement, nil);
     sqlite3_step(statement);
     sqlite3_finalize(statement);
@@ -156,6 +156,7 @@
     NSString *sql_category = [NSString stringWithFormat:@"%@",categoly];
     NSString *sql_task_name = [NSString stringWithFormat:@"%@",title];
     NSString *sql_memo = [NSString stringWithFormat:@"%@",memo];
+    NSString *sql_sync_flag = [NSString stringWithFormat:@"%s","0"];
     NSString *sql_start_time = [NSString stringWithFormat:@"%@",start_time];
     NSString *sql_stop_time = [NSString stringWithFormat:@"%@",stop_time];
     NSString *sql_update_time = [self timeGet];
@@ -163,7 +164,7 @@
     
     //NSLog(@"sql_update_time is %@",sql_update_time);
 
-    query = [NSString stringWithFormat:@"INSERT INTO task VALUES(NULL,\"%@\",\"%@\",\"%@\",\"%@\",\"%@\",\"%@\")", sql_category,sql_task_name,sql_memo,sql_start_time,sql_stop_time,sql_update_time];
+    query = [NSString stringWithFormat:@"INSERT INTO task VALUES(NULL,\"%@\",\"%@\",\"%@\",\"%@\",\"%@\",\"%@\",\"%@\")", sql_category,sql_task_name,sql_memo,sql_start_time,sql_stop_time,sql_update_time,sql_sync_flag];
     sqlite3_prepare_v2(sqlax, [query UTF8String], -1, &statement, nil);
     sqlite3_step(statement);
     sqlite3_finalize(statement);
@@ -201,6 +202,7 @@
         char *stop = (char *) sqlite3_column_text(statement,5);
         ////NSLog(@"Found : %s", stop);
         char *update = (char *) sqlite3_column_text(statement,6);
+        char *sync_flag = (char *) sqlite3_column_text(statement,7);
         ////NSLog(@"Found : %s", update);
         //NSLog(@"%s,%s,%s,%s,%s,%s,%s",id,category,name,memo1,start,stop,update);
         
@@ -223,7 +225,7 @@
             ////NSLog(@"ファイルハンドルの作成に失敗");
             return;
         }
-        NSString *writeLine = [NSString stringWithFormat:@"%s,'%s','%s','%s','%s','%s','%s'\n",id,category,name,memo1,start,stop,update];
+        NSString *writeLine = [NSString stringWithFormat:@"%s,'%s','%s','%s','%s','%s','%s','%s'\n",id,category,name,memo1,start,stop,update,sync_flag];
         NSData *data = [NSData dataWithBytes:writeLine.UTF8String length:writeLine.length];
         [fileHandle seekToEndOfFile];
         
@@ -237,7 +239,7 @@
     
     //作成したcsvファイルを送信
     NSData *sampleData = [NSData dataWithContentsOfFile:csvFileFullPath];
-    //NSLog(@"%@",sampleData);
+    NSLog(@"%@",sampleData);
     
     //送信先URL
 	NSURL *url = [NSURL URLWithString:@"http://192.168.33.20/"];
