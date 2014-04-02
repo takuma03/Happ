@@ -12,23 +12,28 @@ while($data = mysql_fetch_assoc($recordSet)){
 }
 */
 
-$n = 0;
+$n = 1;
 //CSVのデータ取得
 if (($handle = fopen("test.csv", "r")) !== FALSE) {
     while (($data = fgetcsv($handle)) !== FALSE) {
             //$csv_id[$n] = $data[7];
             if($data[7] == "'0'"){
                         $sql = sprintf('insert into task values(' . $data[0] . ',' . $data[1] . ',' . $data[2] . ',' . $data[3] . ',' . $data[4] . ',' . $data[5] . ',' . $data[6] . ', 1 )' );
-                        echo   $sql . "<br />";
+                        //echo   $sql . "<br />";
                         mysql_query($sql) or die (mysql_error());
                         //echo 'データを挿入しました';       
                         //echo "<br />";
             }elseif($data[7] == "'1'"){
                         //MySQLからupdate_timeを取得する
-                        
+                        $result  =  mysql_query('select update_time from task where task_id = ' . $n);
+                        while($row = mysql_fetch_assoc($result)){
+                                $mysql_update_time = $row['update_time'];
+                        }
                         //CSVデータのupdate_time($data[6])と比較する
-                        //CSVデータ側が新しければCSV側のデータをMySQLへinsertする
+                        echo $mysql_update_time . "<br />";         
                         
+                        //CSVデータ側が新しければCSV側のデータをMySQLへinsertする
+                                
                         //MySQL側が新しければSQL文を作成する
             }
             $n++;
