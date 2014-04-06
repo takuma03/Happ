@@ -42,6 +42,15 @@ if (($handle = fopen("test.csv", "r")) !== FALSE) {
                         //MySQL側が新しければSQL文を作成する
                         }elseif(strtotime($csv_update_time) < strtotime($mysql_update_time)){
                         		echo "MySQL側の方が新しいです<br />";
+                        	        $mysql_result = mysql_query('select * from task where task_id =' .$n);
+                        	        while($row = mysql_fetch_assoc($mysql_result)){
+                        	               $mysql_category = $row['category'];
+                        	               $mysql_task_name = $row['task_name'];
+                        	               $mysql_memo = $row['memo'];
+                        	               $mysql_start_time = $row['start_time'];
+                        	               $mysql_stop_time = $row['stop_time'];
+                        	        }
+                        	        echo 'update task set category = "' . $mysql_category . '", task_name = "' . $mysql_task_name . '", memo = "' .$mysql_memo . '", start_time = "' . $mysql_start_time . '", stop_time = "' . $mysql_stop_time . '",update_time = "' . $mysql_update_time . '" where task_id = ' . $n .';';
                         }else{
                         		echo "更新なし<br />";
                         }
