@@ -1,0 +1,2 @@
+■MySQLで該当する行の一行目を取り出すsql
+select task_id from task where sync_flag = 0 limit;

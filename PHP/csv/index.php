@@ -49,6 +49,7 @@ if (($handle = fopen("test.csv", "r")) !== FALSE) {
                         	               $mysql_memo = $row['memo'];
                         	               $mysql_start_time = $row['start_time'];
                         	               $mysql_stop_time = $row['stop_time'];
+                        	               //test
                         	        }
                         	        echo 'update task set category = "' . $mysql_category . '", task_name = "' . $mysql_task_name . '", memo = "' .$mysql_memo . '", start_time = "' . $mysql_start_time . '", stop_time = "' . $mysql_stop_time . '",update_time = "' . $mysql_update_time . '" where task_id = ' . $n .';';
                         }else{
