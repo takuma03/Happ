@@ -1,0 +1,5 @@
+・MySQL側にはsync_flagカラムはない。
+・sync_flagが0でMySQLをインサートするSQLを作成すると同時にデリート文を作成する。
+
+■MySQL側にあって、SQLite側にないレコードの扱い
+SQLite側のsync_flagが0のレコードのtask_idを取得し、それを使用してinsert文を作成する。
