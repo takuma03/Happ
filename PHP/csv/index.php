@@ -19,7 +19,6 @@ $count_csv = sizeof(file("test.csv"));
 //CSVのデータ取得
 if (($handle = fopen("test.csv", "r")) !== FALSE) {
     while (($data = fgetcsv($handle)) !== FALSE) {
-<<<<<<< HEAD
         //$csv_id[$n] = $data[7];
         if($data[7] == "'0'"){
             $sql = sprintf('insert into task (category, task_name, memo, start_time, stop_time, update_time) values (' . $data[1] . ',' . $data[2] . ',' . $data[3] . ',' . $data[4] . ',' . $data[5] . ',' . $data[6] .')');
@@ -62,48 +61,6 @@ if (($handle = fopen("test.csv", "r")) !== FALSE) {
                 }
             }else{
                 echo "更新なし<br />";
-=======
-            //$csv_id[$n] = $data[7];
-            if($data[7] == "'0'"){
-                        $sql = sprintf('insert into task values(' . $data[0] . ',' . $data[1] . ',' . $data[2] . ',' . $data[3] . ',' . $data[4] . ',' . $data[5] . ',' . $data[6] . ', 1 )' );
-                        //echo   $sql . "<br />";
-                        mysql_query($sql) or die (mysql_error());
-                        //echo 'データを挿入しました';       
-                        //echo "<br />";
-            }elseif($data[7] == "'1'"){
-                        //MySQLからupdate_timeを取得する
-                        $result  =  mysql_query('select update_time from task where task_id = ' . $n);
-                        while($row = mysql_fetch_assoc($result)){
-                                $mysql_update_time = $row['update_time'];
-                        }
-                        //CSVデータのupdate_time($data[6])と比較する
-                        echo "MySQLのデータ：" . $mysql_update_time . "<br />";
-                        $csv_update_time = str_replace("'","",$data[6]);
-                        echo "CSVのデータ：" . $csv_update_time . "<br />";
-                        if(strtotime($csv_update_time) > strtotime($mysql_update_time)){
-                        //CSVデータ側が新しければCSV側のデータをMySQLへinsertする
-                        		echo "iPhone側の方が新しいです<br />" ;
-                        		$sql = sprintf('update task set category =' . $data[1] . ', task_name =' . $data[2] . ', memo =' .$data[3] . ', start_time =' . $data[4] . ', stop_time =' . $data[5] . ',update_time =' . $data[6] . 'where task_id =' . $n );
-                        		mysql_query($sql) or die(mysql_error());
-                        		echo "データを挿入しました<br />";
-                        //MySQL側が新しければSQL文を作成する
-                        }elseif(strtotime($csv_update_time) < strtotime($mysql_update_time)){
-                        		echo "MySQL側の方が新しいです<br />";
-                        	        $mysql_result = mysql_query('select * from task where task_id =' .$n);
-                        	        while($row = mysql_fetch_assoc($mysql_result)){
-                        	               $mysql_category = $row['category'];
-                        	               $mysql_task_name = $row['task_name'];
-                        	               $mysql_memo = $row['memo'];
-                        	               $mysql_start_time = $row['start_time'];
-                        	               $mysql_stop_time = $row['stop_time'];
-                        	               //test
-                        	        }
-                        	        echo 'update task set category = "' . $mysql_category . '", task_name = "' . $mysql_task_name . '", memo = "' .$mysql_memo . '", start_time = "' . $mysql_start_time . '", stop_time = "' . $mysql_stop_time . '",update_time = "' . $mysql_update_time . '" where task_id = ' . $n .';';
-                        }else{
-                        		echo "更新なし<br />";
-                        }
-                        
->>>>>>> ac538ddaee4c3146ffd6ddb4228e1480f64e8a69
             }
         }
         $n++;
