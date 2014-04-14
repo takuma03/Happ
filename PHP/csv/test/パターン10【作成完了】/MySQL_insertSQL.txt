@@ -1,0 +1,2 @@
+insert into task (category, task_name, memo, start_time, stop_time, update_time) values('test2’,’test2’,’test2’,’2014/03/05 22:46:40’,’2014/03/05 22:46:50’,’2014/03/05 22:46:21’);
+insert into task (category, task_name, memo, start_time, stop_time, update_time) values('test10’,’test10’,’test10’,’2014/03/05 22:46:40’,’2014/03/05 22:46:50’,’2014/03/05 22:46:21’);
