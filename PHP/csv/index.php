@@ -72,20 +72,30 @@ if (($handle = fopen("test.csv", "r")) !== FALSE) {
     if($count_csv != $row['count(*)']){
         if($top_no_sync !=0){
             echo 'delete from task where task_id >= ' . $top_no_sync .'<br />';
+        	$mysql_result = mysql_query('select * from task where task_id >= ' .$top_no_sync);
+        	while($row = mysql_fetch_assoc($mysql_result)){
+				$mysql_task_id = $row['task_id'];
+				$mysql_category = $row['category'];
+				$mysql_task_name = $row['task_name'];
+				$mysql_memo = $row['memo'];
+				$mysql_start_time = $row['start_time'];
+				$mysql_stop_time = $row['stop_time'];
+				$mysql_update_time = $row['update_time'];
+				 echo 'insert into task values(' . $mysql_task_id . ',"' . $mysql_category . '","' . $mysql_task_name . '","' . $mysql_memo . '","' . $mysql_start_time . '","' . $mysql_stop_time . '","' . $mysql_update_time . '",1);<br />';
+        	}
+        }else{
+        	$mysql_result = mysql_query('select * from task where task_id >= ' .$n);
+        	while($row = mysql_fetch_assoc($mysql_result)){
+				$mysql_task_id = $row['task_id'];
+				$mysql_category = $row['category'];
+				$mysql_task_name = $row['task_name'];
+				$mysql_memo = $row['memo'];
+				$mysql_start_time = $row['start_time'];
+				$mysql_stop_time = $row['stop_time'];
+				$mysql_update_time = $row['update_time'];
+				echo 'insert into task values(' . $mysql_task_id . ',"' . $mysql_category . '","' . $mysql_task_name . '","' . $mysql_memo . '","' . $mysql_start_time . '","' . $mysql_stop_time . '","' . $mysql_update_time . '",1);<br />';
+        	}
         }
-        
-        $mysql_result = mysql_query('select * from task where task_id >= ' .$top_no_sync);
-        while($row = mysql_fetch_assoc($mysql_result)){
-            $mysql_task_id = $row['task_id'];
-            $mysql_category = $row['category'];
-            $mysql_task_name = $row['task_name'];
-            $mysql_memo = $row['memo'];
-            $mysql_start_time = $row['start_time'];
-            $mysql_stop_time = $row['stop_time'];
-            $mysql_update_time = $row['update_time'];
-            echo 'insert into task values(' . $mysql_task_id . ',"' . $mysql_category . '","' . $mysql_task_name . '","' . $mysql_memo . '","' . $mysql_start_time . '","' . $mysql_stop_time . '","' . $mysql_update_time . '",1);<br />';
-        }
-        
     }
     fclose($handle);
 }
