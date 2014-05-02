@@ -11,6 +11,17 @@ stop_time datetime,
 update_time datetime
 );
 
+
+CREATE TABLE user
+(
+user_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+user_name VARCHAR(255),
+mail VARCHAR(255),
+job VARCHAR(255)
+);
+
+
+
 ■テストデータ挿入SQL
 insert into task values(1,'test','test','test','2014/03/05 22:46:30','2014/03/05 22:46:39','2014/03/05 22:46:41');
 insert into task values(2,'category','title','memo','2014/03/05 22:57:37','2014/03/05 22:57:59','2014/03/05 22:58:03');
