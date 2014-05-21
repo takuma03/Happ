@@ -45,29 +45,41 @@ if(empty($_GET['code'])){
     $url = 'https://graph.facebook.com/me?access_token=' . $access_token .  '&fields=name,picture';
     $me = json_decode(file_get_contents($url));
     //var_dump($me);
-    exit;
+    //exit;
+	
 	
 	//DB処理
-	try{
-		$dbh = new PDO('msyql:host=' . DB_HOST . '; dbname=' . DB_NAME ,DB_USER , DB_PASSWORD);
+	try{ 
+		$dbh = new PDO('mysql:host=' . DB_HOST . '; dbname=' . DB_NAME ,DB_USER , DB_PASSWORD);
 	} catch (PDOException $e){
 		echo $e->getMessage();
 		exit;
 	}
 	
-	$stmt = $dnh->prepare("select * from users where facebook_user_id=: user_id limit 1");
+	
+	$stmt = $dbh->prepare("select * from users where id=:user_id limit 1");
 	$stmt->execute(array(":user_id"=>$me->id));
 	$user = $stmt->fetch();
 	
 	if(empty($user)){
 		$stmt = $dbh->prepare("insert into users (facebook_user_id, facebook_name, facebook_picture, facebook_access_token, created, modified) values (:user_id, :name, :picture, :access_token, now(), now());");
-		$params = array(
-		
+	   $params = array(
+            ":user_id"=>$me->id,
+            ":name"=>$me->name,
+            ":picture"=>$me->picture->data->url,
+            ":access_token"=>$access_token
 		);
+	    $stmt->execute($params);
+	    $stmt = $dbh->prepare("select * from users where id=:last_insert_id limit 1"); 
+	    $stmt->execute(array(":last_insert_id"=>$dbh->lastInsertId()));
+	    $user = $stmt->fetch();	
 	}
+	var_dump($user);
+	exit;
 	
     //ログイン処理
     //index.php
-
+    
+    
 }
 ?>
