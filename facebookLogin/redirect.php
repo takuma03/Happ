@@ -74,11 +74,16 @@ if(empty($_GET['code'])){
 	    $stmt->execute(array(":last_insert_id"=>$dbh->lastInsertId()));
 	    $user = $stmt->fetch();	
 	}
-	var_dump($user);
-	exit;
+	//var_dump($user);
+	//exit;
 	
     //ログイン処理
+    if(!empty($user)){
+        session_regenerate_id(true);
+        $_SESSION['user'] = $user;
+    }
     //index.php
+    header('Location: ' . SITE_URL);
     
     
 }
