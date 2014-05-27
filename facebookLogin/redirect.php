@@ -29,6 +29,7 @@ if(empty($_GET['code'])){
     if($_SESSION['state'] != $_GET['state']){
         echo "不正な処理</br>";
     }
+
     
     //ユーザー情報の取得
     $params = array(
@@ -57,7 +58,7 @@ if(empty($_GET['code'])){
 	}
 	
 	
-	$stmt = $dbh->prepare("select * from users where id=:user_id limit 1");
+	$stmt = $dbh->prepare("select * from users where facebook_user_id=:user_id limit 1");
 	$stmt->execute(array(":user_id"=>$me->id));
 	$user = $stmt->fetch();
 	
