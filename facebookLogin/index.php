@@ -17,7 +17,9 @@ if(empty($_SESSION['user'])){
 }
  
 //友達情報の取得
-$url = "https://graph.facebook.com/me/friends?access_token="
+$url = "https://graph.facebook.com/me/friends?access_token=" . $_SESSION['user']['facebook_access_token'];
+$friends = json_decode(file_get_contents($url));
+//var_dump($friends);
 
 
 
@@ -34,6 +36,11 @@ $url = "https://graph.facebook.com/me/friends?access_token="
     <div>
     <img src="<?php echo h($_SESSION['user']['facebook_picture']); ?>">
     </div>
-    <p><?php echo h($_SESSION['user']['facebook_name']); ?>としてログインしています。</p>
+    <p><?php echo h($_SESSION['user']['facebook_name']); ?>としてログインしています。<a href="logout.php">[logout]</a></p>
+    <ul>
+    <?php foreach ($friends -> data as $friend) : ?>
+    <li><?php echo h($friend->name); ?></li>
+    <?php endforeach; ?>
+    </ul>
 </body>
 </html>
