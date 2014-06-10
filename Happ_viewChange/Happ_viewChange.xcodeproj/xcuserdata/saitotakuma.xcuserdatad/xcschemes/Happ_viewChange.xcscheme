@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B827F7B3193B10C700A3CC41"
+               BlueprintIdentifier = "B8FEAFCB1944385D008E01D9"
                BuildableName = "Happ_viewChange.app"
                BlueprintName = "Happ_viewChange"
                ReferencedContainer = "container:Happ_viewChange.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B827F7D4193B10C700A3CC41"
+               BlueprintIdentifier = "B8FEAFEC1944385D008E01D9"
                BuildableName = "Happ_viewChangeTests.xctest"
                BlueprintName = "Happ_viewChangeTests"
                ReferencedContainer = "container:Happ_viewChange.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B827F7B3193B10C700A3CC41"
+            BlueprintIdentifier = "B8FEAFCB1944385D008E01D9"
             BuildableName = "Happ_viewChange.app"
             BlueprintName = "Happ_viewChange"
             ReferencedContainer = "container:Happ_viewChange.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B827F7B3193B10C700A3CC41"
+            BlueprintIdentifier = "B8FEAFCB1944385D008E01D9"
             BuildableName = "Happ_viewChange.app"
             BlueprintName = "Happ_viewChange"
             ReferencedContainer = "container:Happ_viewChange.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B827F7B3193B10C700A3CC41"
+            BlueprintIdentifier = "B8FEAFCB1944385D008E01D9"
             BuildableName = "Happ_viewChange.app"
             BlueprintName = "Happ_viewChange"
             ReferencedContainer = "container:Happ_viewChange.xcodeproj">
