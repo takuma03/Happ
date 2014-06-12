@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSString *urlString = @"https://192.168.33.10/webLink/";
+    NSString *urlString = @"https://192.168.33.10/login/";
     NSURL *loginURL = [NSURL URLWithString:urlString];
     NSURLRequest *myRequest = [NSURLRequest requestWithURL:loginURL];
     
