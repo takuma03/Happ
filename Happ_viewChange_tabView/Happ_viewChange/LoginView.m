@@ -1,24 +1,33 @@
 //
-//  ViewController.m
-//  Happ_webView
+//  LoginView.m
+//  Happ_viewChange
 //
-//  Created by tkm03 on 2014/05/03.
+//  Created by tkm03 on 2014/06/08.
 //  Copyright (c) 2014年 tkm03. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LoginView.h"
 
-@interface ViewController ()
+@interface LoginView ()
 
 @end
 
-@implementation ViewController
+@implementation LoginView
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSString *urlString = @"https://192.168.33.10/login";
+    NSString *urlString = @"https://192.168.33.10/login/";
     NSURL *loginURL = [NSURL URLWithString:urlString];
     NSURLRequest *myRequest = [NSURLRequest requestWithURL:loginURL];
     
@@ -28,10 +37,10 @@
     
     
     
-    [self.myWebView loadRequest:myRequest];
+    [self.loginView loadRequest:myRequest];
     
     //以下はバウンドさせないための処理
-    for (id subview in self.myWebView.subviews) {
+    for (id subview in self.loginView.subviews) {
         if ([[subview class] isSubclassOfClass: [UIScrollView class]]) {
             ((UIScrollView *)subview).bounces = NO;
         }
@@ -42,8 +51,7 @@
     //-webkit-user-select: none;
     
     
-    self.myWebView.delegate = self;
-    
+    self.loginView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,12 +101,12 @@
             // URLの内容から、メソッドとその引数を取得します。
             NSString *method = [urlStr substringWithRange:[match rangeAtIndex:1]];
             NSString *params = [urlStr substringWithRange:[match rangeAtIndex:2]];
-            #pragma clang diagnostic push
-            #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             // メソッドをコールします。
             [self performSelector:NSSelectorFromString([NSString stringWithFormat:@"%@:", method])
                        withObject:params];
-            #pragma clang diagnostic pop
+#pragma clang diagnostic pop
         }
         
         // カスタムスキームの場合には、リクエストを中止します。
