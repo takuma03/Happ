@@ -1,18 +1,20 @@
 //
 //  AppDelegate.m
-//  Happ_viewChange
+//  Happ_viewChange_test5
 //
-//  Created by tkm03 on 2014/06/08.
+//  Created by tkm03 on 2014/06/21.
 //  Copyright (c) 2014年 tkm03. All rights reserved.
 //
 
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+@synthesize name;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    name = @"齋藤卓馬";
     return YES;
 }
 							

@@ -1,18 +1,18 @@
 //
-//  Happ_viewChangeTests.m
-//  Happ_viewChangeTests
+//  Happ_viewChange_test5Tests.m
+//  Happ_viewChange_test5Tests
 //
-//  Created by tkm03 on 2014/06/08.
+//  Created by tkm03 on 2014/06/21.
 //  Copyright (c) 2014年 tkm03. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface Happ_viewChangeTests : XCTestCase
+@interface Happ_viewChange_test5Tests : XCTestCase
 
 @end
 
-@implementation Happ_viewChangeTests
+@implementation Happ_viewChange_test5Tests
 
 - (void)setUp
 {
