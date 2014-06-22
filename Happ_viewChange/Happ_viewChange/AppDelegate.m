@@ -7,12 +7,70 @@
 //
 
 #import "AppDelegate.h"
+#import "sqlite3.h"
 
 @implementation AppDelegate
+@synthesize sns_id;
+@synthesize name;
+@synthesize sns_access_token;
+@synthesize dataFileFullPath;
+@synthesize dataFileName;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    //変数初期化
+    sns_id = nil;
+    name = nil;
+    sns_access_token =nil;
+    
+    
+    //DB作成
+    dataFileName = @"Happ.sqlite3";
+    // 1.【物理ファイルを準備します】
+    // 使用可能なファイルパスを全て取得する
+    NSArray *availablePats = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    // 最初のものを使用する
+    NSString *dir = [availablePats objectAtIndex:0];
+    // ファイルマネージャを召還する
+    NSFileManager *myFM = [NSFileManager defaultManager];
+    // 物理ファイルって既にありますか？
+    //stringByAppendingPathComponent データの末尾に追加する
+    dataFileFullPath = [dir stringByAppendingPathComponent:dataFileName];
+    //NSLog(@"DBfile is %@",dataFileFullPath);
+    BOOL fileExists = [myFM fileExistsAtPath:dataFileFullPath];
+    // 無い場合はつくる
+    if (! fileExists) {
+        //createFileAtPathファイルを作成する
+        BOOL isSuccessfullyCreated = [myFM createFileAtPath:dataFileFullPath contents:nil attributes:nil];
+        if (! isSuccessfullyCreated) {
+            NSLog(@"新規ファイル作成に失敗しました=>%@", dataFileFullPath);
+        }
+    }
+    
+    // 2.【sqiteを開く】
+    
+    // FIXME: この書き方だとメモリリークする？
+    //sqlite3という型のポインタを作成している部分
+    sqlite3 *sqlax;
+    // 開きます
+    BOOL isSuccessfullyOpened = sqlite3_open([dataFileFullPath UTF8String], &sqlax);
+    if (isSuccessfullyOpened != SQLITE_OK) {
+        NSLog(@"sqlite開けませんでした！=> %s", sqlite3_errmsg(sqlax));
+    }
+    NSLog(@"%@",dataFileFullPath);
+    
+    
+    // 3.【queryとstatementを確保しとこう】
+    NSString *query;
+    sqlite3_stmt *statement;
+    
+    query = @"CREATE TABLE IF NOT EXISTS users(id integer primary key autoincrement, sns_id text, name text, sns_access_token text, created text, modified timestamp)";
+    sqlite3_prepare_v2(sqlax, [query UTF8String], -1, &statement, nil);
+    sqlite3_step(statement);
+    sqlite3_finalize(statement);
+    
     return YES;
 }
 							
@@ -44,3 +102,5 @@
 }
 
 @end
+
+

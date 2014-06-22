@@ -8,7 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    NSString *sns_id;
+    NSString *name;
+    NSString *sns_access_token;
+    NSString *dataFileName;
+    NSString *dataFileFullPath;
+}
+
+@property (nonatomic)NSString *sns_id;
+@property (nonatomic)NSString *name;
+@property (nonatomic)NSString *sns_access_token;
+@property (nonatomic)NSString *dataFileName;
+@property (nonatomic)NSString *dataFileFullPath;
+
 
 @property (strong, nonatomic) UIWindow *window;
 

@@ -7,6 +7,7 @@
 //
 
 #import "LoginView.h"
+#import "AppDelegate.h"
 
 @interface LoginView ()
 
@@ -121,6 +122,8 @@
 #pragma mark - Actions
 // JavaScriptから指定されて呼び出されるメソッド。
 -(void)someAlert:(NSString *)message {
+    /*
+    //受け取ったデータをアラートで表示
     UIAlertView *alert
     = [[UIAlertView alloc] initWithTitle:@""
                                  message:message
@@ -128,6 +131,17 @@
                        cancelButtonTitle:@"OK"
                        otherButtonTitles:nil];
     [alert show];
+    */
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.name = message;
+   
+    TabViewController1 *TabViewController1 = [self.storyboard instantiateViewControllerWithIdentifier:@"Tab"];
+    [self presentViewController:TabViewController1 animated:YES completion:nil];
+    
+    
 }
+
+
 
 @end
