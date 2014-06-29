@@ -134,7 +134,7 @@
     */
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    appDelegate.name = message;
+    appDelegate.sns_info = message;
    
     TabViewController1 *TabViewController1 = [self.storyboard instantiateViewControllerWithIdentifier:@"Tab"];
     [self presentViewController:TabViewController1 animated:YES completion:nil];

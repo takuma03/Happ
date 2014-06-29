@@ -10,6 +10,7 @@
 		B87D962219569C2D0094EA58 /* TabViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = B87D962119569C2D0094EA58 /* TabViewController1.m */; };
 		B87D962519569C5E0094EA58 /* TabViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = B87D962419569C5E0094EA58 /* TabViewController2.m */; };
 		B87D96271956A8980094EA58 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B87D96261956A8980094EA58 /* libsqlite3.0.dylib */; };
+		B8F8B25E19603EDE00C162F3 /* TabViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F8B25D19603EDE00C162F3 /* TabViewController3.m */; };
 		B8FEAFD01944385D008E01D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8FEAFCF1944385D008E01D9 /* Foundation.framework */; };
 		B8FEAFD21944385D008E01D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8FEAFD11944385D008E01D9 /* CoreGraphics.framework */; };
 		B8FEAFD41944385D008E01D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8FEAFD31944385D008E01D9 /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 		B87D962319569C5E0094EA58 /* TabViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController2.h; sourceTree = "<group>"; };
 		B87D962419569C5E0094EA58 /* TabViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController2.m; sourceTree = "<group>"; };
 		B87D96261956A8980094EA58 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		B8F8B25C19603EDE00C162F3 /* TabViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController3.h; sourceTree = "<group>"; };
+		B8F8B25D19603EDE00C162F3 /* TabViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController3.m; sourceTree = "<group>"; };
 		B8FEAFCC1944385D008E01D9 /* Happ_viewChange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happ_viewChange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8FEAFCF1944385D008E01D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B8FEAFD11944385D008E01D9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -128,6 +131,8 @@
 				B8FEAFDE1944385D008E01D9 /* AppDelegate.h */,
 				B8FEAFDF1944385D008E01D9 /* AppDelegate.m */,
 				B8FEAFE11944385D008E01D9 /* Main.storyboard */,
+				B8F8B25C19603EDE00C162F3 /* TabViewController3.h */,
+				B8F8B25D19603EDE00C162F3 /* TabViewController3.m */,
 				B87D962319569C5E0094EA58 /* TabViewController2.h */,
 				B87D962419569C5E0094EA58 /* TabViewController2.m */,
 				B87D962019569C2D0094EA58 /* TabViewController1.h */,
@@ -269,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B87D962219569C2D0094EA58 /* TabViewController1.m in Sources */,
+				B8F8B25E19603EDE00C162F3 /* TabViewController3.m in Sources */,
 				B8FEAFE61944385D008E01D9 /* ViewController.m in Sources */,
 				B8FEAFE01944385D008E01D9 /* AppDelegate.m in Sources */,
 				B8FEB00619443B81008E01D9 /* LoginView.m in Sources */,

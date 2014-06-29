@@ -10,17 +10,22 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     NSString *sns_id;
-    NSString *name;
+    NSString *sns_info;
     NSString *sns_access_token;
     NSString *dataFileName;
     NSString *dataFileFullPath;
+    NSString *sns_name;
+    NSString *user_id;
+
 }
 
 @property (nonatomic)NSString *sns_id;
-@property (nonatomic)NSString *name;
+@property (nonatomic)NSString *sns_info;
 @property (nonatomic)NSString *sns_access_token;
 @property (nonatomic)NSString *dataFileName;
 @property (nonatomic)NSString *dataFileFullPath;
+@property (nonatomic)NSString *sns_name;
+@property (nonatomic)NSString *user_id;
 
 
 @property (strong, nonatomic) UIWindow *window;

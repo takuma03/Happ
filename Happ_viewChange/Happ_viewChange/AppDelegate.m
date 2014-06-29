@@ -11,10 +11,13 @@
 
 @implementation AppDelegate
 @synthesize sns_id;
-@synthesize name;
+@synthesize sns_info;
 @synthesize sns_access_token;
 @synthesize dataFileFullPath;
 @synthesize dataFileName;
+@synthesize sns_name;
+@synthesize user_id;
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -22,7 +25,7 @@
     // Override point for customization after application launch.
     //変数初期化
     sns_id = nil;
-    name = nil;
+    sns_info = nil;
     sns_access_token =nil;
     
     
