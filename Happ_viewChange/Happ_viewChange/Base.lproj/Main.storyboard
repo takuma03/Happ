@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="URK-Ak-Azo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="URK-Ak-Azo">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--View Controller - Happ-->
@@ -208,16 +208,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eis-cS-yEL">
-                                <rect key="frame" x="84" y="412" width="153" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="START">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="timeStart:" destination="MeV-9h-RbK" eventType="touchUpInside" id="UAR-MW-zWA"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5d-e3-efs">
                                 <rect key="frame" x="137" y="374" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -238,14 +228,24 @@
                                     <action selector="dataPreserve:" destination="MeV-9h-RbK" eventType="touchUpInside" id="MN2-cF-pNR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbv-BF-f0D">
-                                <rect key="frame" x="260" y="81" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvd-fa-P9e">
+                                <rect key="frame" x="270" y="80" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="同期">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="dataSync:" destination="MeV-9h-RbK" eventType="touchUpInside" id="Pwi-k7-4T0"/>
+                                    <action selector="dataSync:" destination="MeV-9h-RbK" eventType="touchUpInside" id="P4X-CT-AcF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibe-Zb-nRE">
+                                <rect key="frame" x="137" y="412" width="47" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="START">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="timeStart:" destination="MeV-9h-RbK" eventType="touchUpInside" id="ch7-79-Y9e"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -254,12 +254,10 @@
                     <tabBarItem key="tabBarItem" title="Item 2" id="cvM-Pa-Iqf"/>
                     <connections>
                         <outlet property="category" destination="FwW-Sh-9Wj" id="oNJ-1U-7BM"/>
-                        <outlet property="dataSync" destination="Kbv-BF-f0D" id="c5q-Sn-LTT"/>
                         <outlet property="kenmei" destination="bf6-gL-aHO" id="O7f-9Y-feT"/>
                         <outlet property="memo" destination="xWJ-Lq-n1o" id="CUV-vV-Pkn"/>
-                        <outlet property="startView" destination="eis-cS-yEL" id="yjW-5l-rhY"/>
+                        <outlet property="startView" destination="ibe-Zb-nRE" id="9pQ-dx-Ctg"/>
                         <outlet property="stopView" destination="K5d-e3-efs" id="3Ex-Wc-puJ"/>
-                        <outlet property="timeStart" destination="eis-cS-yEL" id="bFc-YB-mlV"/>
                         <outlet property="timeView" destination="L1A-TF-oGa" id="zhr-dn-F2t"/>
                     </connections>
                 </viewController>

@@ -69,10 +69,18 @@
     NSString *query;
     sqlite3_stmt *statement;
     
+    //ユーザテーブル作成
     query = @"CREATE TABLE IF NOT EXISTS users(id integer primary key autoincrement, sns_id text, name text, sns_access_token text, created text, modified timestamp)";
     sqlite3_prepare_v2(sqlax, [query UTF8String], -1, &statement, nil);
     sqlite3_step(statement);
     sqlite3_finalize(statement);
+    
+    //タスクテーブル作成
+    query = @"CREATE TABLE IF NOT EXISTS task(task_id integer primary key autoincrement, user_id integer ,category text, task_name text, memo text, sync_flag integre, start_time text, stop_time text, update_time timestamp)";
+    sqlite3_prepare_v2(sqlax, [query UTF8String], -1, &statement, nil);
+    sqlite3_step(statement);
+    sqlite3_finalize(statement);
+    
     
     return YES;
 }
